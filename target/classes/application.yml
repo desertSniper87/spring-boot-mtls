@@ -1,0 +1,14 @@
+server:
+  port: 8081
+  ssl:
+    enabled: true
+    key-store: "classpath:server.p12"
+    key-store-password: 123456
+    key-store-type: PKCS12
+    client-auth: need
+    enabled-protocols: TLSv1.2
+
+    trust-store: "classpath:server.p12"
+    trust-store-type: pkcs12
+    trust-store-password: 123456
+

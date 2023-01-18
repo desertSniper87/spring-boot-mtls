@@ -1,0 +1,4 @@
+com/example/securingweb/SecuringWebApplication.class
+com/example/securingweb/WebSecurityConfig.class
+com/example/securingweb/MvcConfig.class
+com/example/securingweb/MvcConfig$1.class
