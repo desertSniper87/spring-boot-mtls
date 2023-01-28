@@ -14,10 +14,10 @@ public class UserController {
     private HttpServletRequest context;
 
     @RequestMapping(value = "/user")
-    public String user(HttpServletRequest request) {
+    public String user() {
 
-        X509Certificate[] certs = (X509Certificate[]) request.getAttribute("javax.servlet.request.X509Certificate");
-        System.out.println(certs[0]);
+//        X509Certificate[] certs = (X509Certificate[]) context.getAttribute("javax.servlet.request.X509Certificate");
+//        System.out.println(certs[0]);
 
         return "user";
     }

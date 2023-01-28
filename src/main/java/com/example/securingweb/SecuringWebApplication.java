@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SecuringWebApplication {
 
 	public static void main(String[] args) throws Throwable {
+		System.setProperty("javax.net.debug", "ssl:handshake");
 		SpringApplication.run(SecuringWebApplication.class, args);
 	}
 

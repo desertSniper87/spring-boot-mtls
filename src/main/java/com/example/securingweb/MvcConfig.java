@@ -25,38 +25,39 @@ public class MvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/login").setViewName("login");
 	}
 
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(new HandlerInterceptor() {
-			public boolean preHandle(HttpServletRequest request,
-									 HttpServletResponse response, Object handler)
-					throws Exception {
-
-
-				X509Certificate[] certs = (X509Certificate[]) request.getAttribute("javax.servlet.request.X509Certificate");
-				if (certs != null && certs.length > 0) {
-					X509Certificate clientCert = certs[0];
-					System.out.println(clientCert);
-					// Use the clientCert object to access the certificate information
-					// such as the subject, issuer, and public key.
-				}
-
-//				System.out.println("1");
+//	@Override
+//	public void addInterceptors(InterceptorRegistry registry) {
+//		registry.addInterceptor(new HandlerInterceptor() {
+//			public boolean preHandle(HttpServletRequest request,
+//									 HttpServletResponse response, Object handler)
+//					throws Exception {
 //
-//				Object object = SecurityContextHolder.getContext().getAuthentication().getCredentials();
-//				if (object instanceof X509Certificate) {
-//					X509Certificate x509Certificate = (X509Certificate) object;
-//					//convert to bouncycastle if you want
-//					System.out.println("Test");
-//					X509CertificateHolder x509CertificateHolder =
-//							new X509CertificateHolder(x509Certificate.getEncoded());
-//					System.out.println(x509CertificateHolder);
+//
+//				X509Certificate[] certs = (X509Certificate[]) request.getAttribute("javax.servlet.request.X509Certificate");
+//				if (certs != null && certs.length > 0) {
+//					X509Certificate clientCert = certs[0];
+//					System.out.println(clientCert);
+//					// Use the clientCert object to access the certificate information
+//					// such as the subject, issuer, and public key.
+//				} else {
+//					System.out.println("1");
 //				}
 //
-//
-					return true;
-			}
-		});
-	}
+////
+////				Object object = SecurityContextHolder.getContext().getAuthentication().getCredentials();
+////				if (object instanceof X509Certificate) {
+////					X509Certificate x509Certificate = (X509Certificate) object;
+////					//convert to bouncycastle if you want
+////					System.out.println("Test");
+////					X509CertificateHolder x509CertificateHolder =
+////							new X509CertificateHolder(x509Certificate.getEncoded());
+////					System.out.println(x509CertificateHolder);
+////				}
+////
+////
+//					return true;
+//			}
+//		});
+//	}
 
 }
