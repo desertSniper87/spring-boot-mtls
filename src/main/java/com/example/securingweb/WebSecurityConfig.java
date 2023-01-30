@@ -37,16 +37,16 @@ public class WebSecurityConfig {
                         .requestMatchers("/", "/home").permitAll()
                         .anyRequest().authenticated()
                 )
-                .formLogin((form) -> form
-                        .loginPage("/login")
-                        .permitAll()
-                )
+//                .formLogin((form) -> form
+//                        .loginPage("/login")
+//                        .permitAll()
+//                )
                 .x509()
                 .subjectPrincipalRegex("CN=(.*?)(?:,|$)").authenticationUserDetailsService(userDetailsServiceWrapper())
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .csrf().disable()
-                .userDetailsService(userDetailsService())
+//                .userDetailsService(userDetailsService())
                 .logout((logout) -> logout.permitAll());
 
 //        http.addFilterAfter(new AfterX509AuthenticationFilter(), X509AuthenticationFilter.class);

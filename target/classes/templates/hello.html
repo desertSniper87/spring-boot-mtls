@@ -6,8 +6,12 @@
     </head>
     <body>
         <h1 th:inline="text">Hello <span th:remove="tag" sec:authentication="name">thymeleaf</span>!</h1>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
+<!--        <form th:action="@{/logout}" method="post">-->
+<!--            <input type="submit" value="Sign Out"/>-->
+<!--        </form> -->
+
+    <a th:href="@{/home}">
+        <button type="button" value="Go to Home">Go to Home</button>
+    </a>
     </body>
 </html>

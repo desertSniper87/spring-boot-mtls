@@ -1,6 +1,10 @@
 package com.example.securingweb;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.log.LogMessage;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.*;
@@ -26,17 +30,17 @@ public class AuthorizationUserDetailsService implements AuthenticationUserDetail
         final String credential = token.getCredentials().toString();
         final String authorities = token.getAuthorities().toString();
 
-        System.out.println("principal: " + principal);
-        System.out.println("credential: " + credential);
-        System.out.println("authorities: " + authorities);
+//        System.out.println("principal: " + principal);
+//        System.out.println("credential: " + credential);
+//        System.out.println("authorities: " + authorities);
 
 
        // TODO this is only for illustration purpose. Should retrieve user from data store and determine user roles
-       if (principal.equals("torsho")) {
+       if (principal.equals("Samidhya Sarker")) {
            // TODO some user lookup and then create User object with roles
-           return new User("torsho", "p", Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN")));
+           return new User("Samidhya Sarker", "p", Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN")));
        } else {
-           return new User("normal-user", "", Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")));
+           throw new UsernameNotFoundException("Certificate not found");
        }
     }
 }
