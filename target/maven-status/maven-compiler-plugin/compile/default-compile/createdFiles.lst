@@ -1,7 +1,5 @@
-com/example/securingweb/WebSecurityConfig.class
-com/example/securingweb/MvcConfig.class
-com/example/securingweb/filter/AfterX509AuthenticationFilter.class
 com/example/securingweb/SecuringWebApplication.class
+com/example/securingweb/WebSecurityConfig.class
+com/example/securingweb/AuthorizationUserDetailsService.class
 com/example/securingweb/UserController.class
-com/example/securingweb/WebSecurityConfig$1.class
-com/example/securingweb/util/CertificateAnalyser.class
+com/example/securingweb/MvcConfig.class
