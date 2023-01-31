@@ -1,5 +1,5 @@
 com/example/securingweb/SecuringWebApplication.class
 com/example/securingweb/WebSecurityConfig.class
 com/example/securingweb/AuthorizationUserDetailsService.class
-com/example/securingweb/UserController.class
 com/example/securingweb/MvcConfig.class
+com/example/securingweb/user/UserController.class
