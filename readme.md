@@ -12,6 +12,10 @@ mvn clean install -DskipTests=true
 mvn spring-boot:run
 ```
 
+## Java Version
+
+I used Java 11 for the project. Please change `pom.xml` to change java version. 
+
 # Using openssl to generate certificates
 
 ## Step 1 - Generate certificate authority using [[openssl]]
