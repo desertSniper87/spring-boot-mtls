@@ -12,6 +12,24 @@ mvn clean install -DskipTests=true
 mvn spring-boot:run
 ```
 
+## Using nGinx as a passthrough
+
+Please change `/etc/nginx/nginx.conf` to use nginx as a ssl upstream proxy.
+
+Add the following lines after `http` block. 
+
+```nginx
+stream {
+    upstream spring-boot {
+        server localhost:8081;
+    }
+    server {
+        listen 443;
+        proxy_pass spring-boot;
+    }
+} 
+```
+
 ## Java Version
 
 I used Java 11 for the project. Please change `pom.xml` to change java version. 

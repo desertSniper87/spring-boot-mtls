@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class SecuringWebApplication {
 
 	public static void main(String[] args) throws Throwable {
-//		System.setProperty("javax.net.debug", "ssl:handshake");
+		System.setProperty("javax.net.debug", "ssl:handshake");
 
 		SpringApplication.run(SecuringWebApplication.class, args);
 	}
